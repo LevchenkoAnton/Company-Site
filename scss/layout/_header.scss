@@ -1,0 +1,115 @@
+#header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.header-holder {
+  padding: 5px 0;
+
+  @include media('>desktop') {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  @include media('>widescreen') {
+    padding: 5px 13px;
+  }
+
+  .logo {
+    display: block;
+    margin-bottom: 10px;
+    text-align: center;
+
+    img {
+      width: 66px;
+    }
+
+    @include media('>desktop') {
+      margin-right: 29px;
+      margin-bottom: 0;
+    }
+  }
+
+  .btn {
+    min-width: 126px;
+    padding: 0.39em 0.7em;
+    text-align: center;
+    font-size: 16px;
+    color: $white;
+    font-weight: 400;
+    text-transform: uppercase;
+    border-radius: 4px;
+    border: 1px solid $blue;
+    background-color: $blue;
+
+    &:hover {
+      background: lighten($blue, 10%);
+    }
+  }
+
+  .btn-01 {
+    border: 1px solid rgba($blue, .48);
+    background: transparent;
+
+
+    &:hover {
+      border-color: $blue;
+      background-color: $blue;
+    }
+  }
+}
+
+.header-nav-holder {
+
+  @include media('>desktop') {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+  }
+
+  .header-nav {
+    @extend %listreset;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+
+    @include media('>desktop') {
+      margin-bottom: 0;
+    }
+
+    li {
+      margin: 0 21px;
+    }
+
+    a {
+      @include animate(color);
+
+      color: $white;
+
+      &:hover {
+        color: darken($white, 25%);
+      }
+    }
+  }
+}
+
+.log-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 14px;
+
+  .btn {
+    margin-right: 16px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
